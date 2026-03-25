@@ -1,0 +1,509 @@
+/* Mobile Responsive Fixes - SOLO PARA EL HEADER */
+
+@media (max-width: 768px) {
+  /* === SELECCIONAR EL PRIMER SECTION (HEADER) === */
+  section:first-of-type {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+  
+  section:first-of-type * {
+    box-sizing: border-box !important;
+  }
+  
+  /* === TODOS LOS TEXTOS EN EL HEADER - SIN CORTES === */
+  section:first-of-type h1,
+  section:first-of-type h2,
+  section:first-of-type h3,
+  section:first-of-type h4,
+  section:first-of-type h5,
+  section:first-of-type h6,
+  section:first-of-type p,
+  section:first-of-type span,
+  section:first-of-type div {
+    /* Permitir envolvimiento de texto */
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    
+    /* No cortar texto */
+    overflow: visible !important;
+    text-overflow: clip !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    /* Centrado */
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* === TÍTULOS GRANDES Y LEGIBLES === */
+  section:first-of-type h1,
+  section:first-of-type .text-5xl,
+  section:first-of-type .text-6xl,
+  section:first-of-type .text-7xl,
+  section:first-of-type .text-8xl {
+    font-size: 2.5rem !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    padding: 0.5rem !important;
+  }
+  
+  section:first-of-type h2,
+  section:first-of-type .text-4xl {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    padding: 0.5rem !important;
+  }
+  
+  section:first-of-type h3,
+  section:first-of-type .text-3xl {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+    padding: 0.5rem !important;
+  }
+  
+  /* === PÁRRAFOS Y TEXTO PEQUEÑO === */
+  section:first-of-type p,
+  section:first-of-type .text-base,
+  section:first-of-type .text-lg {
+    font-size: 1.25rem !important;
+    line-height: 1.5 !important;
+    padding: 0.25rem !important;
+  }
+  
+  section:first-of-type .text-sm,
+  section:first-of-type small {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* === NO TRUNCAR === */
+  section:first-of-type .truncate,
+  section:first-of-type .line-clamp-1,
+  section:first-of-type .line-clamp-2,
+  section:first-of-type .line-clamp-3,
+  section:first-of-type .line-clamp-4,
+  section:first-of-type .line-clamp-5,
+  section:first-of-type .line-clamp-6 {
+    overflow: visible !important;
+    text-overflow: unset !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+  }
+  
+  /* === CONTENEDORES === */
+  section:first-of-type .flex,
+  section:first-of-type .flex-col,
+  section:first-of-type .flex-row {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Pantallas más pequeñas (640px) */
+@media (max-width: 640px) {
+  section:first-of-type h1,
+  section:first-of-type .text-5xl,
+  section:first-of-type .text-6xl {
+    font-size: 2rem !important;
+  }
+  
+  section:first-of-type h2,
+  section:first-of-type .text-4xl {
+    font-size: 1.75rem !important;
+  }
+  
+  section:first-of-type p,
+  section:first-of-type .text-base {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* Pantallas muy pequeñas (480px) */
+@media (max-width: 480px) {
+  section:first-of-type h1,
+  section:first-of-type h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  section:first-of-type p,
+  section:first-of-type .text-base {
+    font-size: 1rem !important;
+  }
+}
+
+/* ============================================ */
+/* TARJETA GESTIÓN EMPRESARIAL 360° - DISEÑO   */
+/* ============================================ */
+
+/* 1. Eliminar forma de picos y crear forma asimétrica premium */
+.from-\[\#0a2435\].via-\[\#1e5a7d\] {
+  clip-path: none !important;
+  border-radius: 2.5rem 0 2.5rem 2.5rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* 2. Glow exterior llamativo — diferencia este paquete */
+.from-\[\#0a2435\].via-\[\#1e5a7d\] {
+  box-shadow:
+    0 24px 70px rgba(10, 36, 53, 0.5),
+    0 0 0 2px rgba(94, 179, 228, 0.55),
+    0 0 55px rgba(94, 179, 228, 0.18) !important;
+  transition: box-shadow 0.5s ease, transform 0.5s ease, border-radius 0.45s ease !important;
+}
+
+.from-\[\#0a2435\].via-\[\#1e5a7d\]:hover {
+  border-radius: 2.5rem 0 2.5rem 2.5rem !important;
+  box-shadow:
+    0 40px 90px rgba(12, 98, 145, 0.5),
+    0 0 0 3px rgba(94, 179, 228, 0.85),
+    0 0 80px rgba(94, 179, 228, 0.35) !important;
+}
+
+/* 3. Badge actualizado */
+.from-\[\#0a2435\].via-\[\#1e5a7d\]::before {
+  content: 'PAQUETE INTEGRADO – GESTIÓN DE PROCESOS' !important;
+  position: absolute !important;
+  top: 1.2rem !important;
+  right: 1.1rem !important;
+  z-index: 20 !important;
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 55%, #fb923c 100%) !important;
+  color: white !important;
+  font-size: 0.64rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.42rem 0.95rem !important;
+  border-radius: 999px 999px 0.5rem 999px !important;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5) !important;
+  text-transform: uppercase !important;
+  font-family: 'Inter', sans-serif !important;
+  white-space: normal !important;
+  max-width: min(52%, 360px) !important;
+  text-align: center !important;
+  line-height: 1.25 !important;
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .from-\[\#0a2435\].via-\[\#1e5a7d\]::before {
+    font-size: 0.55rem !important;
+    max-width: 58% !important;
+    padding: 0.35rem 0.7rem !important;
+    top: 0.9rem !important;
+    right: 0.8rem !important;
+  }
+}
+
+/* 4. Doodles e iconos decorativos alrededor del paquete destacado */
+@keyframes cardOrbit {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(4deg) translateY(-2px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+.from-\[\#0a2435\].via-\[\#1e5a7d\]::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 8 !important;
+  background:
+    radial-gradient(circle at 8% 22%, rgba(94, 179, 228, 0.45) 0 4px, transparent 5px),
+    radial-gradient(circle at 12% 74%, rgba(255, 255, 255, 0.35) 0 3px, transparent 4px),
+    radial-gradient(circle at 86% 30%, rgba(94, 179, 228, 0.4) 0 4px, transparent 5px),
+    radial-gradient(circle at 82% 82%, rgba(255, 255, 255, 0.32) 0 3px, transparent 4px),
+    linear-gradient(140deg, transparent 0 23%, rgba(94, 179, 228, 0.2) 23% 24%, transparent 24% 100%),
+    linear-gradient(45deg, transparent 0 69%, rgba(94, 179, 228, 0.18) 69% 70%, transparent 70% 100%);
+  mix-blend-mode: screen !important;
+  animation: cardOrbit 6.5s ease-in-out infinite !important;
+}
+
+/* Badge "Diagnóstico inicial gratuito" más llamativo en amarillo */
+.from-\[\#0a2435\].via-\[\#1e5a7d\] .inline-flex.items-center.gap-2.px-4.py-2.bg-white\/15.backdrop-blur-md.rounded-full.border.border-white\/30 {
+  background: linear-gradient(135deg, rgba(255, 196, 63, 0.92), rgba(245, 158, 11, 0.95)) !important;
+  border-color: rgba(255, 232, 181, 0.9) !important;
+  box-shadow: 0 8px 22px rgba(245, 158, 11, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.from-\[\#0a2435\].via-\[\#1e5a7d\] .inline-flex.items-center.gap-2.px-4.py-2.bg-white\/15.backdrop-blur-md.rounded-full.border.border-white\/30 span {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.22) !important;
+  letter-spacing: 0.08em !important;
+}
+
+.from-\[\#0a2435\].via-\[\#1e5a7d\] .inline-flex.items-center.gap-2.px-4.py-2.bg-white\/15.backdrop-blur-md.rounded-full.border.border-white\/30 .w-2.h-2.bg-\[\#5eb3e4\].rounded-full.animate-pulse {
+  background: #fff9df !important;
+  box-shadow: 0 0 0 3px rgba(255, 245, 204, 0.35), 0 0 10px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Titulo principal del paquete destacado */
+.from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3 {
+  position: relative !important;
+  color: transparent !important;
+}
+
+.from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3::after {
+  content: 'PAQUETE EMPRESARIAL 360°' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  color: #ffffff !important;
+  display: block !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* 5. Botón "Ver más" — más aire y protagonismo */
+.group\/btn {
+  gap: 1.75rem !important;
+  padding-right: 1.75rem !important;
+  padding-left: 2.25rem !important;
+  border-radius: 999px 999px 999px 0.95rem !important;
+  box-shadow: 0 14px 30px rgba(9, 30, 44, 0.28) !important;
+}
+
+/* 6. Shimmer animado en el borde del card */
+@keyframes ringPulse {
+  0%, 100% { box-shadow:
+    0 24px 70px rgba(10, 36, 53, 0.5),
+    0 0 0 2px rgba(94, 179, 228, 0.4),
+    0 0 55px rgba(94, 179, 228, 0.12); }
+  50% { box-shadow:
+    0 24px 70px rgba(10, 36, 53, 0.5),
+    0 0 0 3px rgba(94, 179, 228, 0.75),
+    0 0 70px rgba(94, 179, 228, 0.28); }
+}
+
+.from-\[\#0a2435\].via-\[\#1e5a7d\]:not(:hover) {
+  animation: ringPulse 3s ease-in-out infinite !important;
+}
+
+/* 7. Responsive real para la tarjeta destacada en movil */
+@media (max-width: 1024px) {
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] {
+    border-radius: 2rem 0 2rem 2rem !important;
+    min-height: auto !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 2rem !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 {
+    gap: 1.5rem !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3,
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3::after {
+    font-size: clamp(2.2rem, 8.2vw, 3.3rem) !important;
+    line-height: 1.05 !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 p {
+    font-size: clamp(1.02rem, 2.9vw, 1.2rem) !important;
+    line-height: 1.5 !important;
+    max-width: 95% !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .relative.h-\[400px\].lg\:h-full.min-h-\[400px\] {
+    min-height: 240px !important;
+    height: 280px !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .inline-flex.items-center.gap-2.px-4.py-2.bg-white\/15.backdrop-blur-md.rounded-full.border.border-white\/30 {
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 0.5rem 0.95rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] {
+    border-radius: 1.7rem 0 1.7rem 1.7rem !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .grid {
+    padding: 1.35rem !important;
+    gap: 1.15rem !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3,
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3::after {
+    font-size: clamp(1.9rem, 9vw, 2.5rem) !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 p {
+    font-size: 1.02rem !important;
+    max-width: 100% !important;
+  }
+
+  .group\/btn {
+    width: 100% !important;
+    max-width: 240px !important;
+    justify-content: center !important;
+    gap: 1.15rem !important;
+    padding-left: 1.4rem !important;
+    padding-right: 1.4rem !important;
+    font-size: 1.02rem !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\]::after {
+    opacity: 0.65 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .grid {
+    padding: 1.05rem !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .inline-flex.items-center.gap-2.px-4.py-2.bg-white\/15.backdrop-blur-md.rounded-full.border.border-white\/30 span {
+    font-size: 0.76rem !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3,
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3::after {
+    font-size: 1.95rem !important;
+    line-height: 1.08 !important;
+  }
+
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .relative.h-\[400px\].lg\:h-full.min-h-\[400px\] {
+    min-height: 210px !important;
+    height: 220px !important;
+  }
+}
+
+/* 8. Formulario contacto: color consistente en selector DNI/RUC */
+#contacto select[name="docType"] {
+  color: #94a3b8 !important;
+}
+
+#contacto select[name="docType"] + span {
+  color: #94a3b8 !important;
+}
+
+#contacto select[name="docType"] option {
+  color: #334155 !important;
+}
+
+@media (max-width: 640px) {
+  #contacto .grid.gap-3.items-center[style*="170px"] {
+    grid-template-columns: 110px minmax(0, 1fr) !important;
+    gap: 0.6rem !important;
+  }
+
+  #contacto select[name="docType"] {
+    font-size: 0.95rem !important;
+    padding: 0.8rem 2rem 0.8rem 0.8rem !important;
+  }
+
+  #contacto input[name="docNumber"] {
+    font-size: 0.95rem !important;
+    padding: 0.8rem 0.85rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  #contacto .grid.gap-3.items-center[style*="170px"] {
+    grid-template-columns: 98px minmax(0, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  #contacto select[name="docType"],
+  #contacto input[name="docNumber"] {
+    font-size: 0.92rem !important;
+    padding-top: 0.72rem !important;
+    padding-bottom: 0.72rem !important;
+  }
+}
+
+/* ============================================ */
+/* ANIMACIÓN DE CARGA - 3 PUNTOS GRANDES */
+/* ============================================ */
+
+@keyframes threeDotsBounce {
+  0%  {
+    box-shadow:
+      -22px 0 0 7px rgba(255,255,255,0.85),
+       0px  0 0 7px rgba(255,255,255,0.65),
+       22px 0 0 7px rgba(255,255,255,0.45);
+  }
+  15% {
+    box-shadow:
+      -22px -13px 0 7px rgba(255,255,255,1),
+       0px   0px  0 7px rgba(255,255,255,0.45),
+       22px  0px  0 7px rgba(255,255,255,0.3);
+  }
+  32% {
+    box-shadow:
+      -22px 0px  0 7px rgba(255,255,255,0.7),
+       0px -13px 0 7px rgba(255,255,255,1),
+       22px  0px 0 7px rgba(255,255,255,0.3);
+  }
+  49% {
+    box-shadow:
+      -22px 0px 0 7px rgba(255,255,255,0.7),
+       0px  0px 0 7px rgba(255,255,255,0.55),
+       22px -13px 0 7px rgba(255,255,255,1);
+  }
+  66%, 100% {
+    box-shadow:
+      -22px 0 0 7px rgba(255,255,255,0.85),
+       0px  0 0 7px rgba(255,255,255,0.65),
+       22px 0 0 7px rgba(255,255,255,0.45);
+  }
+}
+
+/* Ocultar el texto "..." original */
+.tracking-\[0\.45em\] {
+  font-size: 0 !important;
+  letter-spacing: 0 !important;
+  color: transparent !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 80px !important;
+  height: 40px !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+
+/* Los 3 puntos con box-shadow */
+.tracking-\[0\.45em\]::before {
+  content: '' !important;
+  display: block !important;
+  width: 1px !important;
+  height: 1px !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  box-shadow:
+    -22px 0 0 7px rgba(255,255,255,0.85),
+     0px  0 0 7px rgba(255,255,255,0.65),
+     22px 0 0 7px rgba(255,255,255,0.45) !important;
+
+  animation: threeDotsBounce 1.2s ease-in-out infinite !important;
+}
