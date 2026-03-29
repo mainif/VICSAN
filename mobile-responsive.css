@@ -1,5 +1,10 @@
 /* Mobile Responsive Fixes - SOLO PARA EL HEADER */
 
+/* === FOTO SOPHIA CASTAÑEDA - posición desde arriba === */
+img[src*="sophia-castaneda"] {
+  object-position: center 25% !important;
+}
+
 /* === SECCIÓN DE SERVICIOS EN MÓVIL === */
 @media (max-width: 768px) {
   section[id="servicios"] h2 {
