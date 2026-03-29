@@ -1,5 +1,30 @@
 /* Mobile Responsive Fixes - SOLO PARA EL HEADER */
 
+/* === SECCIÓN DE SERVICIOS EN MÓVIL === */
+@media (max-width: 768px) {
+  section[id="servicios"] h2 {
+    font-size: 2.75rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  section[id="servicios"] p {
+    font-size: 0.95rem !important;
+    line-height: 1.15 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section[id="servicios"] h2 {
+    font-size: 2.25rem !important;
+    line-height: 1.15 !important;
+  }
+  
+  section[id="servicios"] p {
+    font-size: 0.85rem !important;
+    line-height: 1.1 !important;
+  }
+}
+
 @media (max-width: 768px) {
   /* === SELECCIONAR EL PRIMER SECTION (HEADER) === */
   section:first-of-type {
@@ -44,47 +69,51 @@
     margin-right: auto !important;
   }
   
-  /* === TÍTULOS GRANDES Y LEGIBLES === */
+  /* === TÍTULOS UNIFORMES Y COMPACTOS - MISMO TAMAÑO PARA MAIN Y HIGHLIGHT === */
   section:first-of-type h1,
+  section:first-of-type h2,
+  section:first-of-type h3,
+  section:first-of-type h4,
+  section:first-of-type h5,
+  section:first-of-type h6,
+  section:first-of-type .text-3xl,
+  section:first-of-type .text-4xl,
   section:first-of-type .text-5xl,
   section:first-of-type .text-6xl,
   section:first-of-type .text-7xl,
-  section:first-of-type .text-8xl {
-    font-size: 2.5rem !important;
-    line-height: 1.3 !important;
-    font-weight: 700 !important;
-    padding: 0.5rem !important;
-  }
-  
-  section:first-of-type h2,
-  section:first-of-type .text-4xl {
-    font-size: 2rem !important;
-    line-height: 1.3 !important;
-    font-weight: 700 !important;
-    padding: 0.5rem !important;
-  }
-  
-  section:first-of-type h3,
-  section:first-of-type .text-3xl {
-    font-size: 1.75rem !important;
-    line-height: 1.3 !important;
-    font-weight: 600 !important;
-    padding: 0.5rem !important;
+  section:first-of-type .text-8xl,
+  section:first-of-type .font-bold,
+  section:first-of-type .font-extrabold {
+    font-size: clamp(2.2rem, 8.5vw, 4rem) !important;
+    line-height: 1 !important;
+    font-weight: 800 !important;
+    padding: 0.15rem 0.5rem !important;
+    margin: 0 !important;
+    letter-spacing: 0 !important;
   }
   
   /* === PÁRRAFOS Y TEXTO PEQUEÑO === */
   section:first-of-type p,
   section:first-of-type .text-base,
   section:first-of-type .text-lg {
-    font-size: 1.25rem !important;
-    line-height: 1.5 !important;
-    padding: 0.25rem !important;
+    font-size: clamp(1.4rem, 4.5vw, 1.7rem) !important;
+    line-height: 1.2 !important;
+    padding: 0 !important;
+    margin: 0.1rem 0 !important;
   }
   
   section:first-of-type .text-sm,
   section:first-of-type small {
-    font-size: 1rem !important;
-    line-height: 1.4 !important;
+    font-size: clamp(1rem, 3.2vw, 1.2rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  /* === SUBTÍTULOS MÁS PEQUEÑOS EN MÓVIL === */
+  section:first-of-type > div > div > p:last-child,
+  section:first-of-type span[className*="text-gray"],
+  section:first-of-type > div > p {
+    font-size: clamp(1.4rem, 4.8vw, 1.8rem) !important;
+    margin: 0.05rem 0 !important;
   }
   
   /* === NO TRUNCAR === */
@@ -108,41 +137,93 @@
     width: 100% !important;
     max-width: 100% !important;
   }
+
+  /* === PADDING Y ESPACIADO === */
+  section:first-of-type {
+    padding: 1rem 0.75rem !important;
+  }
+
+  section:first-of-type > div,
+  section:first-of-type > * {
+    padding: 0.5rem 0.5rem !important;
+    margin: 0 !important;
+    gap: 0.05rem !important;
+  }
+}
+
+/* Breakpoint para Tablets (1024px) */
+@media (max-width: 1024px) {
+  section:first-of-type h1,
+  section:first-of-type h2,
+  section:first-of-type h3,
+  section:first-of-type h4,
+  section:first-of-type h5,
+  section:first-of-type h6,
+  section:first-of-type .text-3xl,
+  section:first-of-type .text-4xl,
+  section:first-of-type .text-5xl,
+  section:first-of-type .text-6xl,
+  section:first-of-type .text-7xl,
+  section:first-of-type .text-8xl {
+    font-size: clamp(2rem, 7.5vw, 3.8rem) !important;
+    line-height: 1 !important;
+    padding: 0.1rem 0.4rem !important;
+  }
+  
+  section:first-of-type p,
+  section:first-of-type .text-base,
+  section:first-of-type .text-lg {
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem) !important;
+    line-height: 1.2 !important;
+  }
 }
 
 /* Pantallas más pequeñas (640px) */
 @media (max-width: 640px) {
   section:first-of-type h1,
-  section:first-of-type .text-5xl,
-  section:first-of-type .text-6xl {
-    font-size: 2rem !important;
-  }
-  
   section:first-of-type h2,
-  section:first-of-type .text-4xl {
-    font-size: 1.75rem !important;
+  section:first-of-type h3,
+  section:first-of-type h4,
+  section:first-of-type h5,
+  section:first-of-type h6,
+  section:first-of-type .text-3xl,
+  section:first-of-type .text-4xl,
+  section:first-of-type .text-5xl,
+  section:first-of-type .text-6xl,
+  section:first-of-type .text-7xl,
+  section:first-of-type .text-8xl {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+    line-height: 1 !important;
   }
   
   section:first-of-type p,
   section:first-of-type .text-base {
-    font-size: 1.125rem !important;
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem) !important;
+    line-height: 1.15 !important;
   }
 }
 
 /* Pantallas muy pequeñas (480px) */
 @media (max-width: 480px) {
   section:first-of-type h1,
-  section:first-of-type h2 {
-    font-size: 1.75rem !important;
+  section:first-of-type h2,
+  section:first-of-type h3,
+  section:first-of-type h4,
+  section:first-of-type h5,
+  section:first-of-type h6,
+  section:first-of-type .text-3xl,
+  section:first-of-type .text-4xl,
+  section:first-of-type .text-5xl {
+    font-size: clamp(1.5rem, 8vw, 2.5rem) !important;
+    line-height: 1 !important;
   }
   
   section:first-of-type p,
   section:first-of-type .text-base {
-    font-size: 1rem !important;
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem) !important;
+    line-height: 1.15 !important;
   }
 }
-
-/* ============================================ */
 /* TARJETA GESTIÓN EMPRESARIAL 360° - DISEÑO   */
 /* ============================================ */
 
@@ -443,33 +524,33 @@
 @keyframes threeDotsBounce {
   0%  {
     box-shadow:
-      -22px 0 0 7px rgba(255,255,255,0.85),
-       0px  0 0 7px rgba(255,255,255,0.65),
-       22px 0 0 7px rgba(255,255,255,0.45);
+      -30px 0 0 10px rgba(255,255,255,0.9),
+       0px  0 0 10px rgba(255,255,255,0.65),
+       30px 0 0 10px rgba(255,255,255,0.4);
   }
   15% {
     box-shadow:
-      -22px -13px 0 7px rgba(255,255,255,1),
-       0px   0px  0 7px rgba(255,255,255,0.45),
-       22px  0px  0 7px rgba(255,255,255,0.3);
+      -30px -16px 0 10px rgba(255,255,255,1),
+       0px   0px  0 10px rgba(255,255,255,0.45),
+       30px  0px  0 10px rgba(255,255,255,0.28);
   }
   32% {
     box-shadow:
-      -22px 0px  0 7px rgba(255,255,255,0.7),
-       0px -13px 0 7px rgba(255,255,255,1),
-       22px  0px 0 7px rgba(255,255,255,0.3);
+      -30px 0px  0 10px rgba(255,255,255,0.72),
+       0px -16px 0 10px rgba(255,255,255,1),
+       30px  0px 0 10px rgba(255,255,255,0.28);
   }
   49% {
     box-shadow:
-      -22px 0px 0 7px rgba(255,255,255,0.7),
-       0px  0px 0 7px rgba(255,255,255,0.55),
-       22px -13px 0 7px rgba(255,255,255,1);
+      -30px 0px 0 10px rgba(255,255,255,0.72),
+       0px  0px 0 10px rgba(255,255,255,0.55),
+       30px -16px 0 10px rgba(255,255,255,1);
   }
   66%, 100% {
     box-shadow:
-      -22px 0 0 7px rgba(255,255,255,0.85),
-       0px  0 0 7px rgba(255,255,255,0.65),
-       22px 0 0 7px rgba(255,255,255,0.45);
+      -30px 0 0 10px rgba(255,255,255,0.9),
+       0px  0 0 10px rgba(255,255,255,0.65),
+       30px 0 0 10px rgba(255,255,255,0.4);
   }
 }
 
@@ -481,8 +562,8 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 80px !important;
-  height: 40px !important;
+  width: 110px !important;
+  height: 56px !important;
   overflow: visible !important;
   position: relative !important;
 }
@@ -501,9 +582,90 @@
   transform: translate(-50%, -50%) !important;
 
   box-shadow:
-    -22px 0 0 7px rgba(255,255,255,0.85),
-     0px  0 0 7px rgba(255,255,255,0.65),
-     22px 0 0 7px rgba(255,255,255,0.45) !important;
+    -30px 0 0 10px rgba(255,255,255,0.9),
+     0px  0 0 10px rgba(255,255,255,0.65),
+     30px 0 0 10px rgba(255,255,255,0.4) !important;
 
-  animation: threeDotsBounce 1.2s ease-in-out infinite !important;
+  animation: threeDotsBounce 0.95s ease-in-out infinite !important;
+}
+
+/* Ajuste puntual: bajar ligeramente la foto de David en el marco circular */
+img[src*="david-alvarez.png"] {
+  object-position: center 62% !important;
+}
+
+/* ============================================ */
+/* MEJORAS RESPONSIVAS ADICIONALES DEL HEADER */
+/* ============================================ */
+
+/* Breakpoint 900px - Tablets medianas */
+@media (max-width: 900px) {
+  section:first-of-type h1,
+  section:first-of-type h2,
+  section:first-of-type h3,
+  section:first-of-type h4,
+  section:first-of-type h5,
+  section:first-of-type h6,
+  section:first-of-type .text-3xl,
+  section:first-of-type .text-4xl,
+  section:first-of-type .text-5xl,
+  section:first-of-type .text-6xl,
+  section:first-of-type .text-7xl,
+  section:first-of-type .text-8xl {
+    font-size: clamp(2.1rem, 8.2vw, 4rem) !important;
+    line-height: 1 !important;
+  }
+}
+
+/* Breakpoint 600px - Phones en landscape */
+@media (max-width: 600px) {
+  section:first-of-type h1,
+  section:first-of-type h2,
+  section:first-of-type h3,
+  section:first-of-type h4,
+  section:first-of-type h5,
+  section:first-of-type h6,
+  section:first-of-type .text-3xl,
+  section:first-of-type .text-4xl,
+  section:first-of-type .text-5xl,
+  section:first-of-type .text-6xl {
+    font-size: clamp(1.8rem, 8vw, 3rem) !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+  }
+
+  section:first-of-type p,
+  section:first-of-type .text-base,
+  section:first-of-type .text-lg {
+    font-size: clamp(0.65rem, 1.8vw, 0.8rem) !important;
+    line-height: 1.15 !important;
+  }
+}
+
+/* Breakpoint 400px - Teléfonos pequeños */
+@media (max-width: 400px) {
+  section:first-of-type h1,
+  section:first-of-type .text-5xl {
+    font-size: 1.65rem !important;
+    font-weight: 800 !important;
+    padding: 0.1rem 0.5rem !important;
+    line-height: 1 !important;
+  }
+  
+  section:first-of-type h2,
+  section:first-of-type .text-4xl {
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+  }
+
+  section:first-of-type p,
+  section:first-of-type .text-base {
+    font-size: 1.1rem !important;
+    line-height: 1.15 !important;
+  }
+
+  section:first-of-type {
+    padding: 1.5rem 0.75rem !important;
+  }
 }
