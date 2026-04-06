@@ -600,6 +600,23 @@ list.appendChild(li);
 }
 liftModalText(overlay);
 
+const mediaPanel=Array.from(overlay.querySelectorAll("div")).find((node)=>{
+const cls=node.className||"";
+return cls.includes("h-[220px]")&&cls.includes("md:h-[360px]")&&cls.includes("lg:h-[420px]");
+});
+if(mediaPanel){
+if(window.innerWidth>=1024){
+mediaPanel.style.setProperty("height","520px","important");
+mediaPanel.style.setProperty("min-height","520px","important");
+}else if(window.innerWidth>=768){
+mediaPanel.style.setProperty("height","420px","important");
+mediaPanel.style.setProperty("min-height","420px","important");
+}else{
+mediaPanel.style.setProperty("height","240px","important");
+mediaPanel.style.setProperty("min-height","240px","important");
+}
+}
+
 const media=Array.from(overlay.querySelectorAll("img")).filter((img)=>{
 const cls=img.className||"";
 return cls.includes("object-cover")&&(cls.includes("modal-service-image")||cls.includes("h-[220px]"));
@@ -610,7 +627,7 @@ if(img.getAttribute("data-presencia-video")==="1")continue;
 if(!VIDEO_SOURCES.length)continue;
 const video=document.createElement("video");
 let sourceIndex=0;
-video.className=img.className;
+video.className="modal-service-image block w-full h-full object-cover";
 video.setAttribute("controls","controls");
 video.setAttribute("playsinline","");
 video.setAttribute("webkit-playsinline","true");
@@ -629,7 +646,7 @@ video.style.setProperty("height","100%","important");
 video.style.setProperty("display","block","important");
 video.style.setProperty("max-width","none","important");
 video.style.setProperty("max-height","none","important");
-video.style.setProperty("object-fit",window.innerWidth>=1024?"cover":"contain","important");
+video.style.setProperty("object-fit","cover","important");
 video.style.objectPosition="center";
 video.setAttribute("data-presencia-video","1");
 let loaded=false;
