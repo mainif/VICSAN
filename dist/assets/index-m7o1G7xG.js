@@ -624,6 +624,8 @@ video.loop=true;
 video.muted=true;
 video.defaultMuted=true;
 video.style.backgroundColor="#000";
+video.style.objectFit="contain";
+video.style.objectPosition="center";
 video.setAttribute("data-presencia-video","1");
 let loaded=false;
 const setSource=()=>{
