@@ -51,8 +51,10 @@ img[src*="sophia-castaneda"] {
   section:first-of-type h5,
   section:first-of-type h6,
   section:first-of-type p,
-  section:first-of-type span,
-  section:first-of-type div {
+  section:first-of-type small,
+  section:first-of-type .text-sm,
+  section:first-of-type .text-base,
+  section:first-of-type .text-lg {
     /* Permitir envolvimiento de texto */
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
@@ -64,14 +66,7 @@ img[src*="sophia-castaneda"] {
     text-overflow: clip !important;
     -webkit-line-clamp: unset !important;
     line-clamp: unset !important;
-    display: block !important;
-    width: 100% !important;
     max-width: 100% !important;
-    
-    /* Centrado */
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
   }
   
   /* === TÍTULOS UNIFORMES Y COMPACTOS - MISMO TAMAÑO PARA MAIN Y HIGHLIGHT === */
@@ -136,23 +131,9 @@ img[src*="sophia-castaneda"] {
   }
   
   /* === CONTENEDORES === */
-  section:first-of-type .flex,
-  section:first-of-type .flex-col,
-  section:first-of-type .flex-row {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
   /* === PADDING Y ESPACIADO === */
   section:first-of-type {
     padding: 1rem 0.75rem !important;
-  }
-
-  section:first-of-type > div,
-  section:first-of-type > * {
-    padding: 0.5rem 0.5rem !important;
-    margin: 0 !important;
-    gap: 0.05rem !important;
   }
 }
 
@@ -229,13 +210,30 @@ img[src*="sophia-castaneda"] {
     line-height: 1.15 !important;
   }
 }
+
+/* === QUIENES SOMOS: MÁS AIRE LATERAL EN MÓVIL === */
+@media (max-width: 768px) {
+  section[id="quienes-somos"] > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  section[id="quienes-somos"] .space-y-6 > .group {
+    margin-left: 0.6rem !important;
+    margin-right: 0.6rem !important;
+  }
+
+  section[id="quienes-somos"] .space-y-6 > .group > div:first-child {
+    left: -0.75rem !important;
+  }
+}
 /* TARJETA GESTIÓN EMPRESARIAL 360° - DISEÑO   */
 /* ============================================ */
 
 /* 1. Eliminar forma de picos y crear forma asimétrica premium */
 .from-\[\#0a2435\].via-\[\#1e5a7d\] {
   clip-path: none !important;
-  border-radius: 2.5rem 0 2.5rem 2.5rem !important;
+  border-radius: 2.5rem !important;
   position: relative !important;
   overflow: hidden !important;
 }
@@ -250,7 +248,7 @@ img[src*="sophia-castaneda"] {
 }
 
 .from-\[\#0a2435\].via-\[\#1e5a7d\]:hover {
-  border-radius: 2.5rem 0 2.5rem 2.5rem !important;
+  border-radius: 2.5rem !important;
   box-shadow:
     0 40px 90px rgba(12, 98, 145, 0.5),
     0 0 0 3px rgba(94, 179, 228, 0.85),
@@ -339,19 +337,22 @@ img[src*="sophia-castaneda"] {
   box-shadow: 0 0 0 3px rgba(255, 245, 204, 0.35), 0 0 10px rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Titulo principal del paquete destacado */
-.from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3 {
-  position: relative !important;
-  color: transparent !important;
+/* Badge de Presencia: degradé celeste */
+#servicios .relative.group.cursor-pointer[data-svc-top="1"] .inline-flex.items-center.gap-2.px-4.py-2.bg-white\/15.backdrop-blur-md.rounded-full.border.border-white\/30 {
+  background: linear-gradient(135deg, rgba(125, 216, 255, 0.95), rgba(58, 159, 212, 0.96)) !important;
+  border-color: rgba(205, 240, 255, 0.9) !important;
+  box-shadow: 0 8px 22px rgba(58, 159, 212, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
 }
 
-.from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3::after {
-  content: 'PAQUETE EMPRESARIAL 360°' !important;
-  position: absolute !important;
-  inset: 0 !important;
+#servicios .relative.group.cursor-pointer[data-svc-top="1"] .inline-flex.items-center.gap-2.px-4.py-2.bg-white\/15.backdrop-blur-md.rounded-full.border.border-white\/30 span {
   color: #ffffff !important;
-  display: block !important;
-  letter-spacing: -0.01em !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.22) !important;
+  letter-spacing: 0.08em !important;
+}
+
+#servicios .relative.group.cursor-pointer[data-svc-top="1"] .inline-flex.items-center.gap-2.px-4.py-2.bg-white\/15.backdrop-blur-md.rounded-full.border.border-white\/30 .w-2.h-2 {
+  background: #f0fbff !important;
+  box-shadow: 0 0 0 3px rgba(197, 240, 255, 0.35), 0 0 10px rgba(255, 255, 255, 0.8) !important;
 }
 
 /* 5. Botón "Ver más" — más aire y protagonismo */
@@ -382,7 +383,7 @@ img[src*="sophia-castaneda"] {
 /* 7. Responsive real para la tarjeta destacada en movil */
 @media (max-width: 1024px) {
   .from-\[\#0a2435\].via-\[\#1e5a7d\] {
-    border-radius: 2rem 0 2rem 2rem !important;
+    border-radius: 2rem !important;
     min-height: auto !important;
   }
 
@@ -396,8 +397,7 @@ img[src*="sophia-castaneda"] {
     gap: 1.5rem !important;
   }
 
-  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3,
-  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3::after {
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3 {
     font-size: clamp(2.2rem, 8.2vw, 3.3rem) !important;
     line-height: 1.05 !important;
     margin-bottom: 0.75rem !important;
@@ -423,7 +423,7 @@ img[src*="sophia-castaneda"] {
 
 @media (max-width: 768px) {
   .from-\[\#0a2435\].via-\[\#1e5a7d\] {
-    border-radius: 1.7rem 0 1.7rem 1.7rem !important;
+    border-radius: 1.7rem !important;
   }
 
   .from-\[\#0a2435\].via-\[\#1e5a7d\] .grid {
@@ -431,8 +431,7 @@ img[src*="sophia-castaneda"] {
     gap: 1.15rem !important;
   }
 
-  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3,
-  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3::after {
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3 {
     font-size: clamp(1.9rem, 9vw, 2.5rem) !important;
   }
 
@@ -466,8 +465,7 @@ img[src*="sophia-castaneda"] {
     letter-spacing: 0.05em !important;
   }
 
-  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3,
-  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3::after {
+  .from-\[\#0a2435\].via-\[\#1e5a7d\] .space-y-8 > div:nth-child(2) > h3 {
     font-size: 1.95rem !important;
     line-height: 1.08 !important;
   }
@@ -672,5 +670,168 @@ img[src*="david-alvarez.png"] {
 
   section:first-of-type {
     padding: 1.5rem 0.75rem !important;
+  }
+}
+
+/* ============================================ */
+/* HARDENING RESPONSIVO GLOBAL */
+/* ============================================ */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+video,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Ajuste puntual: 360x800 (y similares) para mantener la imagen de fondo detrás */
+@media (max-width: 380px) and (max-height: 820px) {
+  section:first-of-type {
+    min-height: 100svh !important;
+  }
+
+  section:first-of-type > .absolute.inset-0.z-0 > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+}
+
+/* Desktop/Laptop comunes y tablets grandes */
+@media (max-width: 1280px) {
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  section {
+    overflow-x: clip;
+  }
+
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Evita saltos laterales por elementos absolutamente posicionados */
+  .group,
+  .relative {
+    max-width: 100%;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 5.5rem;
+  }
+
+  /* Inputs a 16px para evitar zoom automático en iOS/Android */
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px !important;
+  }
+
+  /* Ajuste del botón flotante para que no tape contenido */
+  a[aria-label="Contactar por WhatsApp"] {
+    right: 0.9rem !important;
+    bottom: 0.9rem !important;
+  }
+
+  a[aria-label="Contactar por WhatsApp"] > .relative {
+    width: 3.2rem !important;
+    height: 3.2rem !important;
+  }
+
+  a[aria-label="Contactar por WhatsApp"] svg {
+    width: 1.55rem !important;
+    height: 1.55rem !important;
+  }
+}
+
+/* Teléfonos pequeños */
+@media (max-width: 480px) {
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  a[aria-label="Contactar por WhatsApp"] {
+    right: 0.7rem !important;
+    bottom: 0.7rem !important;
+  }
+}
+
+/* Tablets 768x1024: 3 columnas y Sophia centrada */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #equipo .grid.grid-cols-1.sm\:grid-cols-2.gap-6.xl\:hidden {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+
+  #equipo .grid.grid-cols-1.sm\:grid-cols-2.gap-6.xl\:hidden > div:first-child {
+    grid-column: 2 / 3 !important;
+    grid-row: 1 !important;
+  }
+
+  #equipo .grid.grid-cols-1.sm\:grid-cols-2.gap-6.xl\:hidden > div:nth-child(2) {
+    grid-column: 1 / 2 !important;
+    grid-row: 2 !important;
+  }
+
+  #equipo .grid.grid-cols-1.sm\:grid-cols-2.gap-6.xl\:hidden > div:nth-child(3) {
+    grid-column: 2 / 3 !important;
+    grid-row: 2 !important;
+  }
+
+  #equipo .grid.grid-cols-1.sm\:grid-cols-2.gap-6.xl\:hidden > div:nth-child(4) {
+    grid-column: 3 / 4 !important;
+    grid-row: 2 !important;
+  }
+
+  #equipo .grid.grid-cols-1.sm\:grid-cols-2.gap-6.xl\:hidden > div:nth-child(5) {
+    grid-column: 1 / 2 !important;
+    grid-row: 3 !important;
+  }
+
+  #equipo .grid.grid-cols-1.sm\:grid-cols-2.gap-6.xl\:hidden > div:nth-child(6) {
+    grid-column: 2 / 3 !important;
+    grid-row: 3 !important;
+  }
+
+  #equipo .grid.grid-cols-1.sm\:grid-cols-2.gap-6.xl\:hidden > div:nth-child(7) {
+    grid-column: 3 / 4 !important;
+    grid-row: 3 !important;
   }
 }
