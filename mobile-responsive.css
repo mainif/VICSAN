@@ -566,7 +566,7 @@ img[src*="sophia-castaneda"] {
 /* Ajuste puntual: bajar ligeramente la foto de David en el marco circular */
 img[src*="David%20Alvarez.png"],
 img[src*="David Alvarez.png"] {
-  object-position: center 72% !important;
+  object-position: center 78% !important;
 }
 
 /* ============================================ */
