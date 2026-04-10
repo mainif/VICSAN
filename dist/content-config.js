@@ -10,7 +10,7 @@ window.VICSAN_CONTENT = {
     title:       "PRESENCIA EMPRESARIAL DIGITAL",
     description: "Una forma profesional de presentar tu información y compartirla para facilitar el contacto con tus clientes.",
     badge:       "PERFIL + CONTACTO",
-    videoUrl:    "./assets/download%20(2).mp4"
+    videoUrl:    "./assets/Video%20Project%201.mp4"
   },
 
   // --- CARD 2 (la de abajo) ---

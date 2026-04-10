@@ -5,6 +5,8 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>VICSAN</title>
+      <link rel="icon" href="/ico.ico?v=20260409" sizes="any" />
+      <link rel="shortcut icon" href="/ico.ico?v=20260409" />
       <script>
         (function () {
           const writeError = (label, detail) => {
@@ -43,10 +45,107 @@
           });
         })();
       </script>
-      <script src="./content-config.js?v=20260406-3"></script>
-    <script type="module" crossorigin src="./assets/index-m7o1G7xG.js?v=20260406-3"></script>
-      <link rel="stylesheet" crossorigin href="./assets/index-OjmOTvz1.css?v=20260406-3">
-      <link rel="stylesheet" crossorigin href="./mobile-responsive.css?v=20260406-3">
+      <script>
+        (function () {
+          const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/scastaneda@vicsan.com';
+
+          const isContactForm = (form) => {
+            if (!(form instanceof HTMLFormElement)) return false;
+            const hasExpectedFields =
+              form.querySelector('[name="name"]') &&
+              form.querySelector('[name="phone"]') &&
+              form.querySelector('[name="company"]') &&
+              form.querySelector('[name="service"]') &&
+              form.querySelector('[name="comment"]');
+            return !!hasExpectedFields;
+          };
+
+          const setSubmitState = (form, sending) => {
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (!submitBtn) return;
+            if (!submitBtn.dataset.originalText) {
+              submitBtn.dataset.originalText = submitBtn.textContent || 'Enviar solicitud';
+            }
+            submitBtn.disabled = !!sending;
+            submitBtn.style.opacity = sending ? '0.75' : '1';
+            submitBtn.style.cursor = sending ? 'not-allowed' : 'pointer';
+            submitBtn.textContent = sending ? 'Enviando...' : submitBtn.dataset.originalText;
+          };
+
+          const showInlineMessage = (form, message, isError) => {
+            let box = form.querySelector('[data-contact-message="true"]');
+            if (!box) {
+              box = document.createElement('div');
+              box.setAttribute('data-contact-message', 'true');
+              box.style.marginTop = '14px';
+              box.style.padding = '10px 12px';
+              box.style.borderRadius = '10px';
+              box.style.fontSize = '14px';
+              box.style.fontFamily = "'Inter', sans-serif";
+              form.appendChild(box);
+            }
+            box.textContent = message;
+            box.style.background = isError ? '#fef2f2' : '#ecfdf3';
+            box.style.color = isError ? '#b91c1c' : '#166534';
+            box.style.border = isError ? '1px solid #fecaca' : '1px solid #bbf7d0';
+          };
+
+          document.addEventListener('submit', async function (event) {
+            const form = event.target;
+            if (!isContactForm(form)) return;
+
+            event.preventDefault();
+            event.stopPropagation();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+
+            if (form.dataset.sending === '1') return;
+            form.dataset.sending = '1';
+            setSubmitState(form, true);
+
+            const payload = {
+              name: (form.elements.name && form.elements.name.value || '').trim(),
+              phone: (form.elements.phone && form.elements.phone.value || '').trim(),
+              company: (form.elements.company && form.elements.company.value || '').trim(),
+              service: (form.elements.service && form.elements.service.value || '').trim(),
+              comment: (form.elements.comment && form.elements.comment.value || '').trim(),
+              _subject: 'Nueva solicitud desde web VICSAN',
+              _template: 'table',
+              _captcha: 'false'
+            };
+
+            try {
+              const res = await fetch(CONTACT_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Accept: 'application/json'
+                },
+                body: JSON.stringify(payload)
+              });
+
+              const data = await res.json().catch(function () { return {}; });
+              if (!res.ok || data.success === false) {
+                throw new Error((data && data.message) || 'No se pudo enviar el correo.');
+              }
+
+              form.reset();
+              showInlineMessage(form, 'Solicitud enviada correctamente. Te contactaremos pronto.', false);
+            } catch (err) {
+              showInlineMessage(form, 'No se pudo enviar ahora. Inténtalo de nuevo o escríbenos por WhatsApp.', true);
+              console.error('Error enviando formulario:', err);
+            } finally {
+              form.dataset.sending = '0';
+              setSubmitState(form, false);
+            }
+          }, true);
+        })();
+      </script>
+      <script src="./content-config.js?v=20260409-4"></script>
+    <script type="module" crossorigin src="./assets/index-m7o1G7xG.js?v=20260409-4"></script>
+      <link rel="stylesheet" crossorigin href="./assets/index-OjmOTvz1.css?v=20260409-4">
+      <link rel="stylesheet" crossorigin href="./mobile-responsive.css?v=20260409-4">
     </head>
 
     <body>

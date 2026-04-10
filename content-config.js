@@ -10,7 +10,7 @@ window.VICSAN_CONTENT = {
   // --- CARD 1 (Presencia Digital) — opcional ---
   // Reemplaza este link por tu video final.
   card1: {
-    videoUrl: "./dist/assets/download%20(2).mp4"
+    videoUrl: "./assets/Video%20Project%201.mp4"
   },
 
   // --- CARD 2 (la de abajo) — edita aquí ---
